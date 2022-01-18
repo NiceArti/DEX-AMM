@@ -1,0 +1,28 @@
+{
+  "name": "cravcenco-nichita-dex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npx truffle test --network development",
+    "ganache": "npx ganache-cli --accounts 4 --networkId 123456789 --host 127.0.0.1 --port 8545",
+    "test-headless": "npm run ganache > /dev/null & npm run test && kill $(lsof -t -i:8545) || kill $(lsof -t -i:8545)",
+    "compile": "npx truffle compile --all",
+    "truffle": "npx truffle console --network development",
+    "update-ropsten": "npx truffle migrate --reset --network ropsten"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.2",
+    "math": "^0.0.3",
+    "truffle-assertions": "^0.9.2"
+  }
+}
